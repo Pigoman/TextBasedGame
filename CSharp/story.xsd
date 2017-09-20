@@ -10,7 +10,7 @@
 				< Holds each section of the story
 				< as well as choices for the player
 				< -->
-				<xs:element name="node">
+				<xs:element name="branchNode">
 					<xs:complexType>
 						<xs:sequence>
 							<!-- The story -->

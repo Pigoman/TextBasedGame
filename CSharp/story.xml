@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<story schemaLocation="story.xsd">
+
+	<node id="0">
+		<content>TITLE</content>
+		<choice idref="1">
+			<decision>DECISION TEXT</decision>
+		</choice>
+		<choice idref="2">
+			<decision>DECISION TEXT</decision>
+		</choice>
+	</node>
+
+</story>

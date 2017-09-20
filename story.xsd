@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<!-- Story for the text based game engine -->
+	<xs:element name="story">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- 
+				< Story Node
+				< Holds each section of the story
+				< as well as choices for the player
+				< -->
+				<xs:element name="node">
+					<xs:complexType>
+						<xs:sequence>
+							<!-- The story -->
+							<xs:element name="content" type="xs:string"></xs:element>
+							<!-- Choice element -->
+							<xs:element name="choice" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<!-- Decision text -->
+										<xs:element name="decision" type="xs:string"></xs:element>
+									</xs:sequence>
+										<!-- Link to next node -->
+										<xs:attribute name="idref" type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+							<!-- 
+							< Unique id number for each node
+							< Nodes will be able to reference other nodes
+							< using this number. Decisions made by the
+							< player will tell the game engine which node
+							< to load next
+							< -->
+							<xs:attribute name="id" type="xs:int"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				
+			</xs:sequence>
+				<!-- Location of this file. Should be in same directory -->
+				<xs:attribute name="schemaLocation" type="xs:string"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>
